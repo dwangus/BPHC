@@ -4,4 +4,5 @@
     <string name="title_activity_options">Options</string>
     <string name="network_unavailable_message">Network is unavailable!</string>
     <string name="Forum">Forum</string>
+    <string name="QandA">Q and A</string>
 </resources>
