@@ -7,4 +7,17 @@
         android:orderInCategory="100"
         android:title="@string/action_settings"
         app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_Forum"
+        android:orderInCategory="100"
+        android:title="@string/Forum"
+        app:showAsAction="ifRoom|withText" />
+
+    <item
+        android:id="@+id/action_NewsFeed"
+        android:orderInCategory="100"
+        android:title="News"
+        app:showAsAction="ifRoom|withText" />
+
 </menu>

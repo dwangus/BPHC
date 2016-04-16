@@ -46,7 +46,7 @@ public class Forum extends AppCompatActivity {
     //public static Boolean hasChanged = false;
     //change the URL based on the account
     //ALSO: must initialize a "questions: 0" and "answers: 0" in the database url
-    public static final String FIREBASE_URL = "https://scorching-fire-6661.firebaseio.com/";
+    public static final String FIREBASE_URL = "https://bphc2.firebaseio.com/";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

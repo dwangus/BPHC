@@ -1,13 +1,17 @@
 package com.dwangus.gai.bphc.ui;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Parcelable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.dwangus.gai.bphc.R;
 import com.dwangus.gai.bphc.adapters.AnswersAdapter;
@@ -31,6 +35,7 @@ public class tappedQuestion extends AppCompatActivity {
     private Questions mQuestion = new Questions();
     private List<Answers> mAnswers = new ArrayList<Answers>();
     private AnswersAdapter adapter;
+    private String mPassword;
 
     @InjectView(R.id.tQTitle) TextView mQTitle;
     @InjectView(R.id.qDate) TextView mDateSubmit;
@@ -149,10 +154,44 @@ public class tappedQuestion extends AppCompatActivity {
     }
     @OnClick(R.id.newAnswer)
     public void newAnswer(View view){
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+
+        builder.setMessage("Enter your password")
+                .setTitle("Log in");
+
+        LayoutInflater inflater = this.getLayoutInflater();
+        builder.setView(inflater.inflate(R.layout.login_pop_up, null));
+
+        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+                AlertDialog dlg = (AlertDialog) dialog;
+                mPassword = ((TextView) dlg.findViewById(R.id.password)).getText().toString();
+                if (mPassword.equals("BPHC"))
+                {
+                    passwordSuccess();
+                }
+                else{
+                    Toast.makeText(getApplicationContext(), "Incorrect Password", Toast.LENGTH_LONG).show();
+                }
+            }
+        });
+
+        builder.setNegativeButton("Cancel", null);
+
+        AlertDialog dialog = builder.create();
+        dialog.show();
+
+
+    }
+
+
+    public void passwordSuccess(){
         Intent intent = new Intent(this, submitAnswer.class);
         intent.putExtra("FIREBASE_URL", Forum.FIREBASE_URL);
         intent.putExtra("Q_ID", mQuestion.getID());
         intent.putExtra("NUMBER", mQuestion.getNumAnswers());
         startActivity(intent);
     }
+
+
 }
