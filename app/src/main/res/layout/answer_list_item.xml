@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:background="#fffc970b"
     android:paddingTop="8dp"
-    android:paddingBottom="8dp">
+    android:paddingBottom="8dp"
+    android:background="#ffffff">
 
     <View
         android:id="@+id/lineView"

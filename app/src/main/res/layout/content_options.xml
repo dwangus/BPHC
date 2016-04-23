@@ -15,17 +15,21 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Some welcome description"
+        android:text="Catch up on the latest updates from BAHEC or ask an anymous question and get reliable answers on the Q &amp; A forum"
         android:id="@+id/descriptionOptions"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
         android:layout_above="@+id/toForumOptions"
-        android:layout_marginBottom="150dp" />
+        android:layout_marginBottom="150dp"
+        android:textSize="24sp"
+        android:gravity="center"
+        android:background="#ffffff"
+        android:textColor="#000000" />
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Take Me to News feed"
+        android:text="Take Me to the News feed"
         android:id="@+id/toNewsFeedOptions"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
@@ -34,7 +38,7 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Take Me to Q and A"
+        android:text="Take Me to the Q &amp; A"
         android:id="@+id/toForumOptions"
         android:layout_above="@+id/toNewsFeedOptions" />
 </RelativeLayout>
