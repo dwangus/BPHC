@@ -1,7 +1,7 @@
 <resources>
-    <string name="app_name">BPHC</string>
+    <string name="app_name">Hudd3L</string>
     <string name="action_settings">Settings</string>
-    <string name="title_activity_options">Options</string>
+    <string name="title_activity_options">Hudd3L</string>
     <string name="network_unavailable_message">Network is unavailable!</string>
     <string name="Forum">Forum</string>
     <string name="QandA">Q and A</string>

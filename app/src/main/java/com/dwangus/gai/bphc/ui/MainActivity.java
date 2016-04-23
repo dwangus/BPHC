@@ -12,12 +12,22 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 import com.dwangus.gai.bphc.R;
+import com.twitter.sdk.android.Twitter;
+import com.twitter.sdk.android.core.TwitterAuthConfig;
+import io.fabric.sdk.android.Fabric;
 
 public class MainActivity extends AppCompatActivity {
+
+    // Note: Your consumer key and secret should be obfuscated in your source code before shipping.
+    private static final String TWITTER_KEY = "Kt0wflyjuYYiaw1nfPrb0s8dO";
+    private static final String TWITTER_SECRET = "ajzZW7Hai5YH0lGTqrWrAF8NMg2B7WMbIQFk2NhPZ3FYKpY4ll";
+
     public static final String TAG = MainActivity.class.getSimpleName();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        TwitterAuthConfig authConfig = new TwitterAuthConfig(TWITTER_KEY, TWITTER_SECRET);
+        Fabric.with(this, new Twitter(authConfig));
         setContentView(R.layout.activity_main);
         ButterKnife.inject(this);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);

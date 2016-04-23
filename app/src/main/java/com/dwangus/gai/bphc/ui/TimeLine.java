@@ -5,8 +5,11 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.ViewGroup;
 
 import com.dwangus.gai.bphc.R;
 import com.twitter.sdk.android.tweetui.TweetTimelineListAdapter;
@@ -19,7 +22,7 @@ public class TimeLine extends ListActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_time_line);
         final UserTimeline userTimeline = new UserTimeline.Builder()
-                .screenName("fabric")
+                .screenName("Hudd3L")
                 .build();
         final TweetTimelineListAdapter adapter = new TweetTimelineListAdapter.Builder(this)
                 .setTimeline(userTimeline)
@@ -27,6 +30,14 @@ public class TimeLine extends ListActivity {
         setListAdapter(adapter);
 
     }
+
+    /*
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        return inflater.inflate(R.layout.activity_time_line, container, false);
+    }
+    */
 
     public void toForum(){
         Intent intent = new Intent(this, Forum.class);
