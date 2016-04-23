@@ -1,14 +1,12 @@
 package com.dwangus.gai.bphc.ui;
 
 import android.content.Intent;
-import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.TextView;
 
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -34,9 +32,6 @@ public class MainActivity extends AppCompatActivity {
         ButterKnife.inject(this);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        Typeface myTypeface = Typeface.createFromAsset(getAssets(), "Chewy.ttf");
-        TextView myTextview = (TextView) findViewById(R.id.welcomeText);
-        myTextview.setTypeface(myTypeface);
     }
 
     @OnClick (R.id.welcomeButton)
