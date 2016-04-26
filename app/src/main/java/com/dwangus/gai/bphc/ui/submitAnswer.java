@@ -1,6 +1,7 @@
 package com.dwangus.gai.bphc.ui;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -8,6 +9,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.dwangus.gai.bphc.R;
@@ -31,6 +33,18 @@ public class submitAnswer extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_submit_answer);
         ButterKnife.inject(this);
+
+        Typeface myTypeface = Typeface.createFromAsset(getAssets(), "Chewy.ttf");
+        TextView myTextview1 = (TextView) findViewById(R.id.cancelAnswer);
+        TextView myTextview2 = (TextView) findViewById(R.id.submitAnswer);
+        TextView myTextview3 = (TextView) findViewById(R.id.headerA);
+        TextView myTextview4 = (TextView) findViewById(R.id.detailsAnswer);
+
+        myTextview1.setTypeface(myTypeface);
+        myTextview2.setTypeface(myTypeface);
+        myTextview3.setTypeface(myTypeface);
+        myTextview4.setTypeface(myTypeface);
+
         Intent intent = getIntent();
         final String url = intent.getStringExtra("FIREBASE_URL");
         final String qid = intent.getStringExtra("Q_ID");

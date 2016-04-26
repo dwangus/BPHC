@@ -34,9 +34,13 @@ public class MainActivity extends AppCompatActivity {
         ButterKnife.inject(this);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
         Typeface myTypeface = Typeface.createFromAsset(getAssets(), "Chewy.ttf");
-        TextView myTextview = (TextView) findViewById(R.id.welcomeText);
-        myTextview.setTypeface(myTypeface);
+        TextView myTextview1 = (TextView) findViewById(R.id.welcomeText);
+        TextView myTextview2 = (TextView) findViewById(R.id.welcomeButton);
+
+        myTextview1.setTypeface(myTypeface);
+        myTextview2.setTypeface(myTypeface);
     }
 
     @OnClick (R.id.welcomeButton)

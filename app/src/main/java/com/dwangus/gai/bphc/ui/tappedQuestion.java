@@ -3,6 +3,7 @@ package com.dwangus.gai.bphc.ui;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Parcelable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -50,6 +51,22 @@ public class tappedQuestion extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tapped_question);
         ButterKnife.inject(this);
+
+        Typeface myTypeface = Typeface.createFromAsset(getAssets(), "Chewy.ttf");
+        TextView myTextview1 = (TextView) findViewById(R.id.tQTitle);
+        TextView myTextview2 = (TextView) findViewById(R.id.qDate);
+        TextView myTextview3 = (TextView) findViewById(R.id.qDetails);
+        TextView myTextview4 = (TextView) findViewById(R.id.numberOfAnswers);
+        TextView myTextview5 = (TextView) findViewById(R.id.newAnswer);
+
+
+        myTextview1.setTypeface(myTypeface);
+        myTextview2.setTypeface(myTypeface);
+        myTextview3.setTypeface(myTypeface);
+        myTextview4.setTypeface(myTypeface);
+        myTextview5.setTypeface(myTypeface);
+
+
         Intent intent = getIntent();
         final String url = intent.getStringExtra("URL");
         final String qID = intent.getStringExtra("QUESTION_ID");

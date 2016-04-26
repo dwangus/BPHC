@@ -1,7 +1,11 @@
 package com.dwangus.gai.bphc.model;
 
+import android.graphics.Typeface;
 import android.os.Parcel;
 import android.os.Parcelable;
+import android.widget.TextView;
+
+import com.dwangus.gai.bphc.R;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -85,5 +89,4 @@ public class Answers implements Parcelable {
             return new Answers[size];
         }
     };
-
 }

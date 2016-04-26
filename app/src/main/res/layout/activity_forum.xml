@@ -17,7 +17,8 @@
         android:focusable="true"
         android:focusableInTouchMode="true"
         android:clickable="true"
-        android:foreground="?android:attr/selectableItemBackground"/>
+        android:foreground="?android:attr/selectableItemBackground"
+        android:layout_alignParentBottom="true"/>
 
     <Button
         android:layout_width="wrap_content"
@@ -25,7 +26,9 @@
         android:text="New Question"
         android:id="@+id/newQ"
         android:layout_alignBottom="@+id/recyclerView"
-        android:layout_centerHorizontal="true"
-        android:layout_alignRight="@+id/recyclerView" />
+        android:layout_alignRight="@+id/recyclerView"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:textSize="22sp"/>
 
 </RelativeLayout>

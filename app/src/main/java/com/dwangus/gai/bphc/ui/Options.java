@@ -2,6 +2,7 @@ package com.dwangus.gai.bphc.ui;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
@@ -11,6 +12,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.dwangus.gai.bphc.R;
@@ -49,6 +51,15 @@ public class Options extends AppCompatActivity {
         ButterKnife.inject(this);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        Typeface myTypeface = Typeface.createFromAsset(getAssets(), "Chewy.ttf");
+        TextView myTextview1 = (TextView) findViewById(R.id.toForumOptions);
+        TextView myTextview2 = (TextView) findViewById(R.id.descriptionOptions);
+        TextView myTextview3 = (TextView) findViewById(R.id.toNewsFeedOptions);
+
+        myTextview1.setTypeface(myTypeface);
+        myTextview2.setTypeface(myTypeface);
+        myTextview3.setTypeface(myTypeface);
+
 
     }
 
