@@ -5,4 +5,5 @@
     <string name="network_unavailable_message">Network is unavailable!</string>
     <string name="Forum">Forum</string>
     <string name="QandA">Q &amp; A</string>
+    <string name="title_activity_main2">Main2Activity</string>
 </resources>

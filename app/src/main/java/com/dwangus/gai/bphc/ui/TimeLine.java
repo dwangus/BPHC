@@ -2,6 +2,8 @@ package com.dwangus.gai.bphc.ui;
 
 import android.app.ListActivity;
 import android.content.Intent;
+import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -17,6 +19,11 @@ import com.twitter.sdk.android.tweetui.UserTimeline;
 
 public class TimeLine extends ListActivity {
 
+    public void getStarted(){
+        Intent intent = new Intent(this, Options.class);
+        startActivity(intent);
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,6 +35,15 @@ public class TimeLine extends ListActivity {
                 .setTimeline(userTimeline)
                 .build();
         setListAdapter(adapter);
+
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                getStarted();
+            }
+        });
+
 
     }
 

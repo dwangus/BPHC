@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @OnClick (R.id.welcomeButton)
-    public void getStarted(View view){
+    public void getStarted(){
         Intent intent = new Intent(this, Options.class);
         startActivity(intent);
     }
