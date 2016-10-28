@@ -6,4 +6,6 @@ Basic framework here, alowing for a "forum" Q&A-type mobile application, with th
 
 Also allows retrieval of relevant Tweets about the Boston Public Health Commission into a "timeline" feature.
 
+Screenshots can be found in the /screenshots folder.
+
 (Back-end database implemented with Firebase)
