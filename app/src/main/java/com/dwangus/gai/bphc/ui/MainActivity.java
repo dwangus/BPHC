@@ -8,6 +8,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import butterknife.ButterKnife;
@@ -25,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
     private static final String TWITTER_SECRET = "ajzZW7Hai5YH0lGTqrWrAF8NMg2B7WMbIQFk2NhPZ3FYKpY4ll";
 
     public static final String TAG = MainActivity.class.getSimpleName();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,14 +37,29 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         Typeface myTypeface = Typeface.createFromAsset(getAssets(), "Chewy.ttf");
-        TextView myTextview = (TextView) findViewById(R.id.welcomeText);
-        myTextview.setTypeface(myTypeface);
+        TextView myTextview1 = (TextView) findViewById(R.id.welcomeText);
+        TextView myTextview2 = (TextView) findViewById(R.id.welcomeButton);
+        myTextview1.setTypeface(myTypeface);
+        myTextview2.setTypeface(myTypeface);
+
     }
 
-    @OnClick (R.id.welcomeButton)
-    public void getStarted(){
-        Intent intent = new Intent(this, Options.class);
+
+
+
+    @OnClick(R.id.welcomeButton)
+    public void toMission() {
+        Intent intent = new Intent(this, mission.class);
         startActivity(intent);
+    }
+
+
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
     }
     public void toForum(){
         Intent intent = new Intent(this, Forum.class);
@@ -52,12 +69,6 @@ public class MainActivity extends AppCompatActivity {
     public void toNewsFeed(){
         Intent intent = new Intent(this, TimeLine.class);
         startActivity(intent);
-    }
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
     }
 
     @Override

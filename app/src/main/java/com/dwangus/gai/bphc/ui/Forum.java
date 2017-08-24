@@ -1,6 +1,7 @@
 package com.dwangus.gai.bphc.ui;
 
 import android.content.Context;
+import android.graphics.Typeface;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.support.v7.app.AppCompatActivity;
@@ -14,6 +15,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.IOException;
@@ -56,6 +58,10 @@ public class Forum extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_forum);
         ButterKnife.inject(this);
+        Typeface myTypeface = Typeface.createFromAsset(getAssets(), "Chewy.ttf");
+        TextView myTextview1 = (TextView) findViewById(R.id.newQ);
+        myTextview1.setTypeface(myTypeface);
+
         if (isNetworkAvailable()) {
             Firebase.setAndroidContext(this);
             Firebase firebaseRef = new Firebase(FIREBASE_URL);

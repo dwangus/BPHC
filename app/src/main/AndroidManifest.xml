@@ -44,6 +44,14 @@
             android:value="0222be8c232649d16329c898ef499793100f85b9" />
 
         <activity android:name=".ui.TimeLine" />
+        <activity
+            android:name=".ui.mission"
+            android:label="@string/title_activity_mission"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".ui.Main2Activity"
+            android:label="@string/title_activity_main2"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>
